@@ -7,11 +7,11 @@
 # Inherit from marble device
 $(call inherit-product, device/xiaomi/marble/device.mk)
 
-# Inherit from common RisingOS configuration
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit from common FlareOS configuration
+$(call inherit-product, vendor/flare/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_marble
+PRODUCT_NAME := flare_marble
 PRODUCT_DEVICE := marble
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := POCO
@@ -29,19 +29,13 @@ BUILD_FINGERPRINT := POCO/marble_global/marble:14/UKQ1.230804.001/V816.0.10.0.UM
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# RisingOS stuff
+# FlareOS stuff
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_DISABLE_EPPE := true
 TARGET_ENABLE_BLUR := true
 TARGET_HAS_UDFPS := false
-WITH_GMS := true
-
-# Quick Switch
-TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
-TARGET_DEFAULT_PIXEL_LAUNCHER := true
+WITH_GAPPS := true
 
 # Maintainer stuff
-RISING_MAINTAINER=SharmagRit
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    RisingChipset="Snapdragon® 7+ Gen 2" \
-    RisingMaintainer="SharmagRit"
+FLARE_BUILD_TYPE := OFFICIAL
+FLARE_MAINTAINER := SharmagRit
